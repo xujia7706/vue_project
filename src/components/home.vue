@@ -29,7 +29,7 @@
 			</aside>
 			<section class="content-container">
 				<div class="grid-content bg-purple-light">
-					<el-col :span="24" class="breadcrumb-container">
+					<el-col :span="24" class="breadcrumb-container" :offset="4">
 						<strong class="title">{{$route.name}}</strong>
 						<el-breadcrumb separator="/" class="breadcrumb-inner">
 							<el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
@@ -37,7 +37,7 @@
 							</el-breadcrumb-item>
 						</el-breadcrumb>
 					</el-col>
-					<el-col :span="24" class="content-wrapper">
+					<el-col :span="24" class="content-wrapper" :offset="4">
 						<transition name="fade" mode="out-in">
 							<router-view></router-view>
 						</transition>
@@ -74,5 +74,11 @@
 	}
 	.content-container{
 		float: left;
+	}
+	.title{
+		line-height:50px
+	}
+	.content-wrapper{
+		padding-top:20px
 	}
 </style>
